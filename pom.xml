@@ -12,7 +12,7 @@
     </parent>
 
     <groupId>org.lab.labtesting</groupId>
-    <artifactId>lab-testing-parent</artifactId>
+    <artifactId>lab-test-parent</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>LabTesting Parent</name>
@@ -20,6 +20,8 @@
 
     <modules>
         <module>framework</module>
+        <module>kafka-attend</module>
+        <module>lab-common</module>
     </modules>
 
     <properties>
@@ -33,7 +35,7 @@
         <mysql-connector.version>8.0.11</mysql-connector.version>
         <mybatis-plus.version>3.3.2</mybatis-plus.version>
         <velocity.version>2.3</velocity.version>
-        <jackson.version>2.9.8</jackson.version>
+        <jackson.version>2.13.3</jackson.version>
         <guava.version>20.0</guava.version>
         <commons-lang3.version>3.5</commons-lang3.version>
         <commons-collections.version>3.2.1</commons-collections.version>
@@ -48,6 +50,7 @@
         <caffeine.version>2.8.1</caffeine.version>
         <projectlombok.version>1.18.20</projectlombok.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
+        <jedis-version->3.3.0</jedis-version->
     </properties>
 
     <dependencyManagement>
@@ -85,6 +88,16 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
             <!--guava-->
@@ -159,6 +172,11 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${projectlombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

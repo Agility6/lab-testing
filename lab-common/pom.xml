@@ -9,16 +9,20 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>lab-test-framework</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>core</module>
-        <module>springboot-core</module>
-    </modules>
+    <artifactId>lab-test-common</artifactId>
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.lab.labtesting</groupId>
+            <artifactId>lab-test-core</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
 
 </project>
